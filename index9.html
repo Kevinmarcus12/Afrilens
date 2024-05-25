@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta data="">
+
+    <title>Afrilens</title>
+    <link rel="" stylesheet="" href="">
+
+    <style>
+        body {
+            background: linear-gradient(115deg, #56d8e4 10%, #9f01ea 90%);
+            text-align: center;
+        }
+        
+        body {
+            background-image: url ('5.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        
+        h2 {
+            font-size: 70px;
+            color: red;
+        }
+        
+        .video-cell {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .video-thumbnail {
+            position: relative;
+            width: 200px;
+            /* Adjust as needed */
+            height: 150px;
+            /* Adjust as needed */
+        }
+        
+        .video-thumbnail img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .video-thumbnail .preview-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .video-thumbnail:hover .preview-video {
+            opacity: 1;
+        }
+    </style>
+
+    <table>
+        <tr>
+            <td class="video-cell">
+                <div class="video-thumbnail"><img src="kisumu.jpg" alt="Video Thumbnail"><video class="preview-video" src="3775301-hd_1920_1080_25fps.mp4" muted loop, autoplay></video></div>
+            </td>
+            <!-- Add more rows as needed -->
+        </tr>
+
+
+        <i class="fa-solid fa-comment"></i>
+    </table>

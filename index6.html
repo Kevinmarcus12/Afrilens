@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <style>
+        body {
+            background: linear-gradient(115deg, #56d8e4 10%, #9f01ea 90%);
+            text-align: center;
+            align-items: center;
+        }
+        
+        h2 {
+            font-size: 40px;
+            color: red;
+            margin-top: 0px;
+        }
+        
+        .header {
+            float: left;
+            margin-top: 0px;
+            margin: 0 auto;
+            position: absolute;
+            margin-left: 30px;
+        }
+        
+        .card {
+            width: 60%;
+            background-color: white;
+            margin: 0 auto;
+            border-radius: 20px;
+            height: auto;
+            padding: 2px;
+            margin-top: 0px;
+            margin-bottom: 50px;
+        }
+        
+        .card h3 {
+            font-size: 20px
+        }
+        
+        .container {
+            width: 50%;
+            background-color: none;
+            margin: 0 auto;
+            border-radius: 10px;
+        }
+        
+        .form-input {
+            margin-bottom: 10px;
+            width: calc(50% - 20px);
+            padding: 5px;
+            border-radius: 10px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            float: left;
+        }
+        
+        .form-label {
+            display: block;
+            text-align: left;
+            margin-bottom: 5px;
+            font-size: 20px;
+        }
+        
+        img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+        }
+        
+        .inputfile {
+            width: 0.1px;
+            height: 0.1px;
+            opacity: 0;
+            overflow: hidden;
+            position: absolute;
+            z-index: -1;
+        }
+        
+        .inputfile+label {
+            font-size: 1.25em;
+            font-weight: 700;
+            color: white;
+            background-color: purple;
+            display: inline-block;
+            border-radius: 10px;
+            padding: 10px;
+        }
+        
+        .inputfile:focus+label,
+        .inputfile+label:hover {
+            background-color: black;
+            color: red;
+        }
+        
+        .inputfile+label {
+            cursor: pointer;
+            /* "hand" cursor */
+        }
+        
+        .inputfile:focus+label {
+            outline: 1px dotted #000;
+            outline: -webkit-focus-ring-color auto 5px;
+        }
+    </style>
+    <link rel="icon" href="gif/AFRI TECH SITES (2).gif" type="image/x-icon">
+    <script src="C:\Users\ROYAL SMILES\Desktop\MARCUS\CSS\upload.js"></script>
+</head>
+
+<body>
+    <main>
+
+        <br><br> <br><br>
+
+        <div class="header">
+            <h2>
+                <a href="C:\Users\ROYAL SMILES\Desktop\MARCUS\CSS\index4.html">AFRILENS</a></h2>
+        </div>
+
+        <br><br> <br><br><br><br> <br><br>
+
+        <div>
+            <div class="card">
+                <div class="text" style="font-size:20px;color:blue;">
+                    <h3>Sign Up</h3>
+
+                    <h3>It 's quick and easy.</h3>
+                </div>
+                <hr>
+
+                <br><br>
+
+                <form action="BIOS" method="post" enctype="multipart/form-data">
+                    <label for="name">Names</label>
+                    <br><br>
+                    <input type="text" id="firstName" name="firstName" placeholder="First name">
+                    <input type="text" id="lastName" name="lastName" placeholder="Last Name">
+                    <br><br> <br><br>
+                    <label for="imgProfile">Profile Picture</label>
+                    <br><br>
+                    <img id="profilePic" src="Illustrations.jpeg" width="200" height="150" alt="Profile Picture">
+                    <br><br>
+                    <input type="file" name="file" id="file" class="inputfile" />
+                    <label for="file">Choose a file</label>
+                    <br><br>
+                    <input type="tel" id="phone" name="phone" placeholder="phone number or email address">
+                    <br><br>
+                    <input type="password" placeholder="New password">
+                    <br><br>
+                    <input type="password" placeholder="Confirm Password"> <br><br>
+                    <label for="dateOfBirth">Date of birth</label>
+                    <br><br> <input type="date" id="dob" name="dob">
+                    <br><br>
+                    <div class="container" style="background-color:white;padding:10px;"> <label for="gender">Gender</label>
+                        <br> <br>
+                        <input type="radio" id="male" name="gender" value="male"> <label for="male">Male</label>
+                        <input type="radio" id="female" name="gender" value="female"><label for="female">Female</label>
+                        <input type="radio" id="Rather not say" name="gender" value="Rather not say"><label for="name">Rather not Say</label>
+                    </div>
+                    <br>
+                    <div style="background-color:grey;color:white;padding:20px">
+                        <p>People who use our service may have uploaded your contact information to Facebook.<br> Learn more.</p>
+
+                        <p>By clicking Sign Up, you agree to our Terms, Privacy Policy and Cookies Policy.<br> You may receive SMS notifications from us and can opt out at any time.</p>
+                    </div>
+                    <br><br>
+                    <button style="background-color:black;color:red" ;padding:20px ">Sign Up</button>
+                    <br>
+                    <p><a href="C:\Users\ROYAL SMILES\Desktop\MARCUS\CSS\index7.html ">Log In</a></p>
+                    <br>
+                </form>
+            </div>
+        </div>
+
+        <br><br>
+<script>
+
+function previewImage(event) {
+            const input = event.target;
+            if (input.files && input.files[0]) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    document.getElementById('profilePic').src = e.target.result;
+                };
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+</script>
+
+    </main>
+
+
+</body>
+
+</html>

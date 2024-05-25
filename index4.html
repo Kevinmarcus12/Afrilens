@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta data="">
+
+    <title>Afrilens</title>
+    <link rel="" stylesheet="" href="">
+
+    <style>
+        body {
+            background: linear-gradient(115deg, #56d8e4 10%, #9f01ea 90%);
+            text-align: center;
+        }
+        
+        body {
+            background-image: url ('5.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        
+        h2 {
+            font-size: 70px;
+            color: red;
+        }
+        
+        h2:hover {
+            opacity: 0.8;
+            transition: opacity 0.5s ease;
+        }
+        
+        h3 {
+            font-size: 20px;
+            color: white;
+        }
+        
+        h4 {
+            font-size: 20px;
+            color: yellow;
+        }
+        
+        h5 {
+            font-size: 20px;
+            color: blue;
+        }
+        
+        p {
+            font-size: 20px;
+            color: white;
+            margin: 0 auto;
+        }
+        
+        .container-wrapper {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        
+        .container {
+            width: 250px;
+            display: block;
+            height: auto;
+            margin: 20px;
+            padding: 0px;
+            background-color: white;
+            border-radius: 20px;
+        }
+        
+        .container img {
+            max-width: 50%;
+            height: auto;
+            margin: 0 auto;
+            padding: 0px;
+        }
+        
+        .card-wrapper {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .card {
+            width: 250px;
+            margin: 50px;
+            height: 450px;
+            padding: 0px;
+            background-color: none;
+            border-radius: 20px;
+            overflow: hidden;
+            justify-content: space-between;
+        }
+        
+        .card img,
+        .card video {
+            max-width: 100%;
+            max-height: 100%;
+            display: block;
+            margin: auto;
+            transition: transform 0.3s ease;
+        }
+        
+        .card video :hover {
+            transform: scale(1.1);
+        }
+        
+        .square {
+            display: flex;
+            background-color: white;
+            justify-content: space-between;
+            flex-direction: column;
+        }
+        
+        table {
+            width: 10%;
+            border-collapse: separate;
+            border-spacing: 0px;
+            border-radius: 20px;
+        }
+        
+        table label {
+            color: yellow;
+            margin-right: 10px;
+        }
+        
+        table img,
+        table figure {
+            border-radius: 20px;
+        }
+        
+        th,
+        td {
+            padding: 2px;
+            margin: 0px;
+            /* Adjust the padding as needed */
+            border: 0px;
+            border-radius: 20px;
+            /* Add borders for better visibility */
+        }
+        
+        .video-thumbnail img :hover {
+            transform: scale(1.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .nav-menu ol {
+            display: flex;
+            background-color: none;
+            justify-content: space-between;
+            float: left;
+            margin-left: 30px;
+            border-radius: 20px;
+            margin-top: 30px;
+        }
+        
+        .nav-menu ol li {
+            color: black;
+            list-style: none;
+            display: inline-block;
+            padding: 10px;
+            margin: 10px;
+            font-size: 20px;
+            font-weight: bold;
+            border-radius: 20px;
+        }
+        
+        .nav-menu ol li:hover {
+            color: red;
+        }
+        
+        .nav ol {
+            display: flex;
+            background-color: none;
+            float: right;
+            margin-right: 10px;
+            margin-top: 20px;
+            border-radius: 20px;
+            margin-top: 30px;
+        }
+        
+        .nav ol li {
+            color: black;
+            padding: 10px;
+            font-weight: bold;
+            list-style: none;
+            margin: 10px;
+            font-size: 20px;
+            margin-top: 0px;
+            border-radius: 20px;
+        }
+        
+        .nav ol li:hover {
+            color: white;
+        }
+        
+        .nav-container ol {
+            display: flex;
+            background-color: beige;
+            padding: 10px;
+            border-radius: 20px;
+        }
+        
+        .nav-container ol li {
+            color: black;
+            margin: 40px;
+            list-style: none;
+            background-color: white;
+            border-radius: 20px;
+            padding: 10px;
+        }
+        
+        .nav-container ol li:hover {
+            background-color: black;
+            color: red;
+        }
+        
+        .search-button {
+            background: linear-gradient(to right, #ff4e50, #f9d423);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 2px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        
+        .search-button:hover {
+            background: linear-gradient(to right, #fc00ff, #00dbde);
+        }
+        
+        .video-cell {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .video-thumbnail {
+            position: relative;
+            width: 400px;
+            /* Adjust as needed */
+            height: 220px;
+            /* Adjust as needed */
+        }
+        
+        .video-thumbnail img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .video-thumbnail .preview-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .video-thumbnail:hover .preview-video {
+            opacity: 1;
+        }
+        
+        a {
+            text-decoration: none;
+        }
+        
+        i {
+            color: red;
+        }
+        
+        img.profile-pic {
+            width: 50px;
+            /* Adjust the width as needed */
+            height: 35px;
+            /* Adjust the height as needed */
+            border-radius: 50%;
+            /* Rounded border */
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css">
+    <script>
+        document.querySelectorAll('.preview-video').forEach(video => {
+            video.addEventListener('mouseenter', () => {
+                video.play();
+            });
+            video.addEventListener('mouseleave', () => {
+                video.pause();
+                video.currentTime = 0;
+            });
+        });
+    </script>
+</head>
+
+<body>
+
+    <main>
+
+        <div>
+            <div class="nav-menu">
+                <ol>
+                    <li>
+                        <a href="C:\Users\ROYAL SMILES\Desktop\MARCUS\CSS\index4.html"><i class="ri-home-line"><br>Home</i></a></li>
+                    <li>
+                        <a href="C:\Users\ROYAL SMILES\Desktop\MARCUS\CSS\index8.html"><i class="ri-video-upload-fill"><br></i>Upload</a></li>
+                </ol>
+            </div>
+        </div>
+
+
+        <div>
+            <div class="nav">
+                <ol>
+
+                </ol>
+            </div>
+        </div>
+
+
+        <div>
+            <div class="nav">
+                <ol>
+                    <li>
+                        <a href="C:\Users\ROYAL SMILES\Desktop\MARCUS\CSS\index6.html"><i class="ri-login-box-line"><br>Sign up</i>
+                        </a></li>
+                    <li>
+                        <a href="C:\Users\ROYAL SMILES\Desktop\MARCUS\CSS\index7.html"><i class="ri-login-box-fill"><br>Log In</i>
+                        </a></li>
+                    <li><i class="ri-notification-4-line"><br>Notification</i></li><br>
+                    <li>
+                        <a href="C:\Users\ROYAL SMILES\Desktop\MARCUS\CSS\index10.html"><i class="ri-account-circle-line"><br>Account</i></a>
+                    </li>
+                </ol>
+            </div>
+        </div>
+
+        <br><br> <br><br>
+
+        <h2>AFRILENS</h2>
+
+        <input type="search" id="search"><br><br><button class="search-button"><i class="ri-search-line"></i> Search</button>
+        <br><br>
+        <br><br>
+
+        <p style="color:black;">Welcome to AFRILENS, the global hub for content creators! Whether you're a filmmaker, vlogger, musician, or storyteller,
+            <br><br> AFRILENS is your platform to share your passion with the world.</p>
+
+        <br><br><br><br>
+
+        <div class="nav-container">
+            <ol>
+                <li>Food</li>
+                <li>Movies</li>
+                <li>Entertainment</li>
+                <li>Health</li>
+                <li>Religion</li>
+                <li>Music</li>
+                <li>Nature</li>
+                <li>Fantasy</li>
+                <li>Science</li>
+                <li>Technology</li>
+            </ol>
+        </div>
+
+
+
+        <br><br>
+
+        <div>
+            <table>
+                <tr>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+
+                </tr>
+
+                <tr>
+                    <td>
+                        <a href="C:\Users\ROYAL SMILES\Desktop\MARCUS\CSS\index9.html">
+                            <figure>
+                                <img src="military/8605303-hd_1920_1080_30fps.gif" alt="Image">
+                                <figcaption>
+                                    <p>Iran the Next superpower Country?</p><br>
+                                    <label for="views"><img src="Illustrations.jpeg" alt="Profile Pic" class="profile-pic">Media Lab</label>
+                                    <label for="time">1pm</label>
+                                    <label for="views"><i class="fas fa-eye"></i>20k views</label>
+                                </figcaption>
+                            </figure>
+                        </a>
+                    </td>
+
+                    <td>
+                        <figure>
+                            <td><img src="hospitality/3775301-hd_1920_1080_25fps.gif">
+                                <p>Here's the best Hotels in Kenya</p><br>
+                                <label for="time">2 days ago</label> <label for="views"><i class="fas fa-eye"></i>20k views</label>
+                        </figure>
+                        </td>
+                        <td>
+                            <figure>
+                                <td><img src="religion/2014793-hd_1920_1080_24fps.gif">
+                                    <p>Where to worship God in 2024</p><br>
+                                    <label for="time">3 hrs ago</label> <label for="views"><i class="fas fa-eye"></i>20k views</label>
+                            </figure>
+                            </td>
+                </tr>
+            </table>
+        </div>
+
+        <br><br>
+
+        <div>
+            <div class="card-wrapper ">
+
+                <div class="card ">
+                    <img src="gif/15283132-hd_1080_1920_30fps.gif "><br><br><br>
+                    <h3>Kenya</h3>
+                    <p>Nephilim caught on camera</p>
+                </div>
+
+                <div class="card ">
+                    <img src="gif/7602428-hd_1080_1920_29fps.gif "><br><br><br>
+                    <h3>Kenya</h3>
+                    <p>How to discover your purpose</p>
+                </div>
+
+                <div class="card ">
+                    <img src="gif/7606999-hd_1080_1920_29fps.gif "><br><br><br>
+                    <h3>Kenya</h3>
+                    <p>How to hear the voice of God</p>
+                </div>
+
+                <div class="card ">
+                    <img src="gif/17243368-uhd_1296_2304_24fps.gif "><br><br><br>
+                    <h3>Kenya</h3>
+                    <p>Kenya the Next superpower Country?</p>
+                </div>
+
+            </div>
+        </div>
+
+        <br><br><br>
+
+        <div>
+            <table>
+                <tr>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+
+                </tr>
+
+                <tr>
+
+                    <td>
+                        <figure>
+                            <td><img src="2836030-uhd_3840_2160_24fps.gif">
+                                <p>Why investors are Flocking to South AFrica</p><br>
+                                <label for="time">1pm</label> <label for="views"><i class="fas fa-eye"></i>20k views</label>
+                        </figure>
+                        </td>
+                        <td>
+                            <figure>
+                                <td><img src="military/4825305-hd_1920_1080_30fps.gif">
+                                    <p>US millitary might in the seas</p><br>
+                                    <label for="time">1pm</label> <label for="views"><i class="fas fa-eye"></i>20k views</label>
+                            </figure>
+                            </figure>
+                            </td>
+                            <td>
+                                <figure>
+                                    <td><img src="social media/7480513-uhd_3840_2160_25fps.gif">
+                                        <p>Tiktok:The app of the century </p><br>
+                                        <label for="time">1pm</label> <label for="views"><i class="fas fa-eye"></i>20k views</label>
+                                </figure>
+                                </td>
+                </tr>
+            </table>
+        </div>
+
+        <br><br><br>
+
+        <div>
+            <table>
+                <tr>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                </tr>
+
+                <tr>
+                    <td>
+                        <figure>
+                            <td class="video-cell">
+                                <div class="video-thumbnail"><img src="kisumu.jpg" alt="Video Thumbnail"><video class="preview-video" src="3775301-hd_1920_1080_25fps.mp4" muted loop, autoplay></video></div>
+                                <p>Kenya the Next superpower Country?</p><br>
+                                <label for="time">1pm</label> <label for="views"><i class="fas fa-eye"></i>20k views</label>
+                        </figure>
+                        </td>
+                        <td>
+                            <figure>
+                                <td class="video-cell">
+                                    <div class="video-thumbnail"><img src="kisumu.jpg" alt="Video Thumbnail"><video class="preview-video" src="3775301-hd_1920_1080_25fps.mp4" muted loop, autoplay></video></div>
+                                    <p>Kenya the Next superpower Country?</p><br>
+                                    <label for="time">1pm</label> <label for="views"><i class="fas fa-eye"></i>20k views</label>
+                            </figure>
+                            </td>
+                            <td>
+                                <figure>
+                                    <td class="video-cell">
+                                        <div class="video-thumbnail"><img src="kisumu.jpg" alt="Video Thumbnail"><video class="preview-video" src="3775301-hd_1920_1080_25fps.mp4" muted loop, autoplay></video></div>
+                                        <p>Kenya the Next superpower Country?</p><br>
+                                        <label for="time">1pm</label> <label for="views"><i class="fas fa-eye"></i>20k views</label>
+                                </figure>
+                                </td>
+                </tr>
+            </table>
+        </div>
+        <div>
+            <table>
+                <tr>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                </tr>
+
+                <tr>
+                    <td>
+                        <figure>
+                            <td class="video-cell">
+                                <div class="video-thumbnail"><img src="kisumu.jpg" alt="Video Thumbnail"><video class="preview-video" src="3775301-hd_1920_1080_25fps.mp4" muted loop, autoplay></video></div>
+                                <p>Kenya the Next superpower Country?</p><br>
+                                <label for="time">1pm</label> <label for="views"><i class="fas fa-eye"></i>20k views</label>
+                        </figure>
+                        </td>
+                        <td>
+                            <figure>
+                                <td class="video-cell">
+                                    <div class="video-thumbnail"><img src="kisumu.jpg" alt="Video Thumbnail"><video class="preview-video" src="3775301-hd_1920_1080_25fps.mp4" muted loop, autoplay></video></div>
+                                    <p>Kenya the Next superpower Country?</p><br>
+                                    <label for="time">1pm</label> <label for="views"><i class="fas fa-eye"></i>20k views</label>
+                            </figure>
+                            </td>
+                            <td>
+                                <figure>
+                                    <td class="video-cell">
+                                        <div class="video-thumbnail"><img src="kisumu.jpg" alt="Video Thumbnail"><video class="preview-video" src="3775301-hd_1920_1080_25fps.mp4" muted loop, autoplay></video></div>
+                                        <p>Kenya the Next superpower Country?</p><br>
+                                        <label for="time">1pm</label> <label for="views"><i class="fas fa-eye"></i>20k views</label>
+                                </figure>
+                                </td>
+                </tr>
+            </table>
+        </div>
+
+        <br><br>
+
+        <div>
+            <table>
+                <tr>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                </tr>
+
+                <tr>
+                    <td>
+                        <figure>
+                            <td class="video-cell">
+                                <div class="video-thumbnail"><img src="kisumu.jpg" alt="Video Thumbnail"><video class="preview-video" src="3775301-hd_1920_1080_25fps.mp4" muted loop, autoplay></video></div>
+                                <p>Kenya the Next superpower Country?</p><br>
+                                <label for="time">1pm</label> <label for="views"><i class="fas fa-eye"></i>20k views</label>
+                        </figure>
+                        </td>
+                        <td>
+                            <figure>
+                                <td class="video-cell">
+                                    <div class="video-thumbnail"><img src="kisumu.jpg" alt="Video Thumbnail"><video class="preview-video" src="3775301-hd_1920_1080_25fps.mp4" muted loop, autoplay></video></div>
+                                    <p>Kenya the Next superpower Country?</p><br>
+                                    <label for="time">1pm</label> <label for="views"><i class="fas fa-eye"></i>20k views</label>
+                            </figure>
+                            </td>
+                            <td>
+                                <figure>
+                                    <td class="video-cell">
+                                        <div class="video-thumbnail"><img src="kisumu.jpg" alt="Video Thumbnail"><video class="preview-video" src="3775301-hd_1920_1080_25fps.mp4" muted loop, autoplay></video></div>
+                                        <p>Kenya the Next superpower Country?</p><br>
+                                        <label for="time">1pm</label> <label for="views"><i class="fas fa-eye"></i>20k views</label>
+                                </figure>
+                                </td>
+                </tr>
+            </table>
+        </div>
+
+
+        <br><br><br><br>
+
+        <div class="nav-container">
+            <ol>
+                <li>Food</li>
+                <li>Movies</li>
+                <li>Entertainment</li>
+                <li>Health</li>
+                <li>Religion</li>
+                <li>Music</li>
+                <li>Nature</li>
+                <li>Fantasy</li>
+                <li>Science</li>
+                <li>Technology</li>
+            </ol>
+        </div>
+
+        <br><br>
+
+        <div>
+            <div class="card-wrapper ">
+
+                <div class="card ">
+                    <img src="gif/15283132-hd_1080_1920_30fps.gif "><br><br><br>
+                    <h3>Kenya</h3>
+                    <p>Nephilim caught on camera</p>
+                </div>
+
+                <div class="card ">
+                    <img src="gif/7602428-hd_1080_1920_29fps.gif "><br><br><br>
+                    <h3>Kenya</h3>
+                    <p>How to discover your purpose</p>
+                </div>
+
+                <div class="card ">
+                    <img src="gif/7606999-hd_1080_1920_29fps.gif "><br><br><br>
+                    <h3>Kenya</h3>
+                    <p>How to hear the voice of God</p>
+                </div>
+
+                <div class="card ">
+                    <img src="gif/17243368-uhd_1296_2304_24fps.gif "><br><br><br>
+                    <h3>Kenya</h3>
+                    <p>Kenya the Next superpower Country?</p>
+                </div>
+
+            </div>
+        </div>
+
+        <br><br>
+
+        <div>
+            <table>
+                <tr>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                </tr>
+
+                <tr>
+                    <td>
+                        <figure>
+                            <td class="video-cell">
+                                <div class="video-thumbnail"><img src="kisumu.jpg" alt="Video Thumbnail"><video class="preview-video" src="3775301-hd_1920_1080_25fps.mp4" muted loop, autoplay></video></div>
+                                <p>Kenya the Next superpower Country?</p><br>
+                                <label for="time">1pm</label> <label for="views"><i class="fas fa-eye"></i>20k views</label>
+                        </figure>
+                        </td>
+                        <td>
+                            <figure>
+                                <td class="video-cell">
+                                    <div class="video-thumbnail"><img src="kisumu.jpg" alt="Video Thumbnail"><video class="preview-video" src="3775301-hd_1920_1080_25fps.mp4" muted loop, autoplay></video></div>
+                                    <p>Kenya the Next superpower Country?</p><br>
+                                    <label for="time">1pm</label> <label for="views"><i class="fas fa-eye"></i>20k views</label>
+                            </figure>
+                            </td>
+                            <td>
+                                <figure>
+                                    <td class="video-cell">
+                                        <div class="video-thumbnail"><img src="kisumu.jpg" alt="Video Thumbnail"><video class="preview-video" src="3775301-hd_1920_1080_25fps.mp4" muted loop, autoplay></video></div>
+                                        <p>Kenya the Next superpower Country?</p><br>
+                                        <label for="time">1pm</label> <label for="views"><i class="fas fa-eye"></i>20k views</label>
+                                </figure>
+                                </td>
+                </tr>
+            </table>
+        </div>
+
+        <br><br>
+
+        <div>
+            <table>
+                <tr>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                </tr>
+
+                <tr>
+                    <td>
+                        <figure>
+                            <td class="video-cell">
+                                <div class="video-thumbnail"><img src="kisumu.jpg" alt="Video Thumbnail"><video class="preview-video" src="3775301-hd_1920_1080_25fps.mp4" muted loop, autoplay></video></div>
+                                <p>Kenya the Next superpower Country?</p><br>
+                                <label for="time">1pm</label> <label for="views"><i class="fas fa-eye"></i>20k views</label>
+                        </figure>
+                        </td>
+                        <td>
+                            <figure>
+                                <td class="video-cell">
+                                    <div class="video-thumbnail"><img src="kisumu.jpg" alt="Video Thumbnail"><video class="preview-video" src="3775301-hd_1920_1080_25fps.mp4" muted loop, autoplay></video></div>
+                                    <p>Kenya the Next superpower Country?</p><br>
+                                    <label for="time">1pm</label> <label for="views"><i class="fas fa-eye"></i>20k views</label>
+                            </figure>
+                            </td>
+                            <td>
+                                <figure>
+                                    <td class="video-cell">
+                                        <div class="video-thumbnail"><img src="kisumu.jpg" alt="Video Thumbnail"><video class="preview-video" src="3775301-hd_1920_1080_25fps.mp4" muted loop, autoplay></video></div>
+                                        <p>Kenya the Next superpower Country?</p><br>
+                                        <label for="time">1pm</label> <label for="views"><i class="fas fa-eye"></i>20k views</label>
+                                </figure>
+                                </td>
+                </tr>
+            </table>
+        </div>
+
+
+
+
+    </main>
+
+</html>
+
+</html>
